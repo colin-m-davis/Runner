@@ -10,7 +10,7 @@ import FirebaseAuth
 
 class AuthState: ObservableObject {
     
-    let firebaseAuth = Auth.auth()
+    private let firebaseAuth = Auth.auth()
     
     // Boolean that represents whether or not the user has signed in.
     @Published var isSignedIn : Bool = false;
@@ -66,9 +66,9 @@ class AuthState: ObservableObject {
             DispatchQueue.main.async {
                 self?.requestProcessing = false
                 self?.isSignedIn = true
-                if let uid = self?.getUserID() {
+                if let user_uid = self?.getUserID() {
                     let db = FirestoreManager()
-                    db.createUserDoc(uid: uid)
+                    db.createUserDoc(user_uid: user_uid)
                 } else {
                     print("Wahhhh--****************")
                 }

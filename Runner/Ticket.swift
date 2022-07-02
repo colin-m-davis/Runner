@@ -6,22 +6,15 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
-struct Ticket {
-    internal let issued = Date() // issued is always equal to the time the Ticket struct was initialized
-    internal var number : Int
-    internal var name : String
-    internal var make : String
-    internal var model : String
-    internal var color : String
-    
-    init(number: Int = -1, name: String="", make: String="", model: String="", color: String="") {
-        self.number = number
-        self.name = name
-        self.make = make
-        self.model = model
-        self.color = color
-    }
-    
-    
+struct Ticket: Codable {
+    @DocumentID internal var id : String? = UUID().uuidString
+    internal var issued : Timestamp = Timestamp()
+    internal var number : Int = -1
+    internal var name : String = ""
+    internal var make : String = ""
+    internal var model : String = ""
+    internal var color : String = ""
 }
