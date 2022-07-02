@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct RunnerApp: App {
+    @StateObject var authState = AuthState()
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppView()
+                .environmentObject(authState)
         }
     }
 }
