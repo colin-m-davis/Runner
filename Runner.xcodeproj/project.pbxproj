@@ -18,9 +18,9 @@
 		DF1E968D286FF2EB0026DD51 /* TicketRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E968C286FF2EB0026DD51 /* TicketRowView.swift */; };
 		DF1E968E286FF2EB0026DD51 /* TicketRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E968C286FF2EB0026DD51 /* TicketRowView.swift */; };
 		DF1E968F286FF2EB0026DD51 /* TicketRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E968C286FF2EB0026DD51 /* TicketRowView.swift */; };
-		DF1E9695286FFDAA0026DD51 /* TicketListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E9694286FFDAA0026DD51 /* TicketListView.swift */; };
-		DF1E9696286FFDAA0026DD51 /* TicketListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E9694286FFDAA0026DD51 /* TicketListView.swift */; };
-		DF1E9697286FFDAA0026DD51 /* TicketListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E9694286FFDAA0026DD51 /* TicketListView.swift */; };
+		DF1E9695286FFDAA0026DD51 /* TicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E9694286FFDAA0026DD51 /* TicketsView.swift */; };
+		DF1E9696286FFDAA0026DD51 /* TicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E9694286FFDAA0026DD51 /* TicketsView.swift */; };
+		DF1E9697286FFDAA0026DD51 /* TicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E9694286FFDAA0026DD51 /* TicketsView.swift */; };
 		DF5DCB58286F604C00D3D2E5 /* RunnerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DCB57286F604C00D3D2E5 /* RunnerApp.swift */; };
 		DF5DCB5A286F604C00D3D2E5 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DCB59286F604C00D3D2E5 /* AppView.swift */; };
 		DF5DCB5C286F604C00D3D2E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF5DCB5B286F604C00D3D2E5 /* Assets.xcassets */; };
@@ -40,6 +40,9 @@
 		DF5DCB9D286F941A00D3D2E5 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DCB9C286F941A00D3D2E5 /* AuthState.swift */; };
 		DF5DCB9E286F941A00D3D2E5 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DCB9C286F941A00D3D2E5 /* AuthState.swift */; };
 		DF5DCB9F286F941A00D3D2E5 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DCB9C286F941A00D3D2E5 /* AuthState.swift */; };
+		DFDCDAB228703C8000C31B6F /* TicketsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCDAB128703C8000C31B6F /* TicketsViewModel.swift */; };
+		DFDCDAB428704ABA00C31B6F /* NewTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCDAB328704ABA00C31B6F /* NewTicketView.swift */; };
+		DFDCDAB728704F3300C31B6F /* NewTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCDAB628704F3300C31B6F /* NewTicketViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +66,7 @@
 		DF1E967F286FA53B0026DD51 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		DF1E9688286FC6B30026DD51 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		DF1E968C286FF2EB0026DD51 /* TicketRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRowView.swift; sourceTree = "<group>"; };
-		DF1E9694286FFDAA0026DD51 /* TicketListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListView.swift; sourceTree = "<group>"; };
+		DF1E9694286FFDAA0026DD51 /* TicketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsView.swift; sourceTree = "<group>"; };
 		DF5DCB54286F604C00D3D2E5 /* Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5DCB57286F604C00D3D2E5 /* RunnerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerApp.swift; sourceTree = "<group>"; };
 		DF5DCB59286F604C00D3D2E5 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -78,6 +81,9 @@
 		DF5DCB90286F758300D3D2E5 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		DF5DCB98286F7EC800D3D2E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DF5DCB9C286F941A00D3D2E5 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
+		DFDCDAB128703C8000C31B6F /* TicketsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsViewModel.swift; sourceTree = "<group>"; };
+		DFDCDAB328704ABA00C31B6F /* NewTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketView.swift; sourceTree = "<group>"; };
+		DFDCDAB628704F3300C31B6F /* NewTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +152,9 @@
 				DF5DCB81286F610600D3D2E5 /* SignInView.swift */,
 				DF1E9698286FFDC60026DD51 /* FireBase */,
 				DF1E9688286FC6B30026DD51 /* Ticket.swift */,
-				DF1E968C286FF2EB0026DD51 /* TicketRowView.swift */,
-				DF1E9694286FFDAA0026DD51 /* TicketListView.swift */,
+				DFDCDAB328704ABA00C31B6F /* NewTicketView.swift */,
+				DFDCDAB628704F3300C31B6F /* NewTicketViewModel.swift */,
+				DFDCDAB528704DF900C31B6F /* TicketsView */,
 				DF5DCB90286F758300D3D2E5 /* RegisterView.swift */,
 				DF5DCB98286F7EC800D3D2E5 /* GoogleService-Info.plist */,
 				DF5DCB5B286F604C00D3D2E5 /* Assets.xcassets */,
@@ -179,6 +186,16 @@
 				DF5DCB74286F604C00D3D2E5 /* RunnerUITestsLaunchTests.swift */,
 			);
 			path = RunnerUITests;
+			sourceTree = "<group>";
+		};
+		DFDCDAB528704DF900C31B6F /* TicketsView */ = {
+			isa = PBXGroup;
+			children = (
+				DFDCDAB128703C8000C31B6F /* TicketsViewModel.swift */,
+				DF1E968C286FF2EB0026DD51 /* TicketRowView.swift */,
+				DF1E9694286FFDAA0026DD51 /* TicketsView.swift */,
+			);
+			path = TicketsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,10 +345,13 @@
 				DF5DCB91286F758300D3D2E5 /* RegisterView.swift in Sources */,
 				DF5DCB5A286F604C00D3D2E5 /* AppView.swift in Sources */,
 				DF1E9680286FA53B0026DD51 /* FirestoreManager.swift in Sources */,
-				DF1E9695286FFDAA0026DD51 /* TicketListView.swift in Sources */,
+				DF1E9695286FFDAA0026DD51 /* TicketsView.swift in Sources */,
+				DFDCDAB728704F3300C31B6F /* NewTicketViewModel.swift in Sources */,
 				DF5DCB58286F604C00D3D2E5 /* RunnerApp.swift in Sources */,
 				DF1E968D286FF2EB0026DD51 /* TicketRowView.swift in Sources */,
+				DFDCDAB428704ABA00C31B6F /* NewTicketView.swift in Sources */,
 				DF1E9689286FC6B30026DD51 /* Ticket.swift in Sources */,
+				DFDCDAB228703C8000C31B6F /* TicketsViewModel.swift in Sources */,
 				DF5DCB9D286F941A00D3D2E5 /* AuthState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,7 +365,7 @@
 				DF1E968A286FC6B30026DD51 /* Ticket.swift in Sources */,
 				DF5DCB9E286F941A00D3D2E5 /* AuthState.swift in Sources */,
 				DF1E9681286FA53B0026DD51 /* FirestoreManager.swift in Sources */,
-				DF1E9696286FFDAA0026DD51 /* TicketListView.swift in Sources */,
+				DF1E9696286FFDAA0026DD51 /* TicketsView.swift in Sources */,
 				DF1E968E286FF2EB0026DD51 /* TicketRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,7 +376,7 @@
 			files = (
 				DF1E968F286FF2EB0026DD51 /* TicketRowView.swift in Sources */,
 				DF5DCB93286F758300D3D2E5 /* RegisterView.swift in Sources */,
-				DF1E9697286FFDAA0026DD51 /* TicketListView.swift in Sources */,
+				DF1E9697286FFDAA0026DD51 /* TicketsView.swift in Sources */,
 				DF1E968B286FC6B30026DD51 /* Ticket.swift in Sources */,
 				DF5DCB9F286F941A00D3D2E5 /* AuthState.swift in Sources */,
 				DF1E9682286FA53B0026DD51 /* FirestoreManager.swift in Sources */,

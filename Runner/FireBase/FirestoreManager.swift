@@ -43,22 +43,5 @@ class FirestoreManager : ObservableObject {
         }
         return success
     }
-    
-    func getTickets(user_uid: String) -> [Ticket] {
-        var tickets : [Ticket] = [];
-        if !user_uid.isEmpty {
-            db.collection("users").document(user_uid).collection("tickets").addSnapshotListener { querySnapshot, error in
-                guard let documents = querySnapshot?.documents else {
-                    print("Search returned 0 results.")
-                    return
-                }
-                tickets = documents.compactMap({ queryDocumentSnapshot -> Ticket? in
-                    return try? queryDocumentSnapshot.data(as: Ticket.self)
-                })
-            }
-        }
-        print(tickets)
-        return tickets
-    }
 
 }

@@ -14,7 +14,7 @@ struct AppView: View {
     var body: some View {
         NavigationView {
             if authState.isSignedIn {
-                TicketListView()
+                TicketsView()
             } else {
                 SignInView()
             }

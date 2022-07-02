@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct Ticket: Codable {
+struct Ticket: Codable, Identifiable {
     @DocumentID internal var id : String? = UUID().uuidString
     internal var issued : Timestamp = Timestamp()
     internal var number : Int = -1

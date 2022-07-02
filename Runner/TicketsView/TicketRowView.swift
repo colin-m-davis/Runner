@@ -21,7 +21,9 @@ struct TicketRowView: View {
     var body: some View {
         HStack {
             Text(dt)
+            Text(ticket.id ?? "NO UID")
         }
+        .background(Color(.red))
     }
 }
 

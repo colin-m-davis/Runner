@@ -12,10 +12,8 @@ struct RegisterView: View {
     @Binding var password : String
     
     @State var verifypassword = ""
-    @State var signUpErrorMessage = ""
     
     @EnvironmentObject var authState : AuthState
-    @ObservedObject var db : FirestoreManager = FirestoreManager()
     
     var body: some View {
         VStack {
