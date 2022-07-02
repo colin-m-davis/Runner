@@ -68,9 +68,11 @@ class AuthState: ObservableObject {
                 self?.isSignedIn = true
                 if let user_uid = self?.getUserID() {
                     let db = FirestoreManager()
-                    db.createUserDoc(user_uid: user_uid)
+                    if db.createUserDoc(user_uid: user_uid) {
+                        print("Created user document")
+                    }
                 } else {
-                    print("Wahhhh--****************")
+                    print("Cannot access database with nil user UID")
                 }
             }
         }

@@ -22,7 +22,7 @@ class FirestoreManager : ObservableObject {
                 print("Could not add default ticket to new user collection")
             }
         } else {
-            print("Cannot create user document: User UID must not be nil")
+            print("Cannot create new user document: User UID must not be nil")
         }
         return success
     }
