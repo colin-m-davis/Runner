@@ -9,12 +9,16 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+// TODO - Rearrange, add, delete fields
 struct Ticket: Codable, Identifiable {
-    @DocumentID internal var id : String? = UUID().uuidString
-    internal var issued : Timestamp = Timestamp()
-    internal var number : Int = -1
-    internal var name : String = ""
-    internal var make : String = ""
-    internal var model : String = ""
-    internal var color : String = ""
+    @DocumentID var id : String? = UUID().uuidString
+    var issued : Timestamp = Timestamp()
+    var number : String = ""
+    var name : String = ""
+    var room : String = ""
+    var departure : String = ""
+    var event : String = ""
+    var make : String = ""
+    var model : String = ""
+    var color : String = ""
 }

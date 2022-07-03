@@ -12,14 +12,25 @@ struct TicketsView : View {
     @StateObject var viewModel = TicketsViewModel()
     
     var body: some View {
-        VStack{
-            NavigationLink("+", destination: NewTicketView())
-            List(viewModel.tickets) { ticket in
-                TicketRowView(ticket: ticket)
+        NavigationView {
+            VStack{
+                NavigationLink("+", destination: NewTicketView())
+                
+                if viewModel.tickets.count == 0 {
+                    Text("No tickets to display.")
+                }
+                
+                List(viewModel.tickets) { ticket in
+                    TicketRowView(ticket: ticket)
+                        .background(Color(UIColor.secondarySystemBackground))
+                }
+                .animation(.default, value: viewModel.tickets.count)
+                
+                Spacer()
             }
-        }
-        .onAppear() {
-            viewModel.fetchTickets()
+            .onAppear() {
+                viewModel.fetchTickets()
+            }
         }
     }
 }

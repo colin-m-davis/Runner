@@ -8,32 +8,30 @@
 import SwiftUI
 
 struct SignInView: View {
-    @State var email = ""
-    @State var password = ""
     
-    @EnvironmentObject var authState : AuthState
+    @StateObject var viewModel = SignInViewModel()
     
     var body: some View {
         VStack {
             Text("Welcome to Runner")
                 .font(.largeTitle)
-            TextField("Email Address", text: $email)
+            TextField("Email Address", text: $viewModel.email)
                 .padding()
                 .background(Color(.secondarySystemBackground))
                 .cornerRadius(5)
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
-            SecureField("Password", text: $password)
+            SecureField("Password", text: $viewModel.password)
                 .padding()
                 .background(Color(.secondarySystemBackground))
                 .cornerRadius(5)
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
             Button(action : {
-                guard !email.isEmpty, !password.isEmpty else {
+                guard !viewModel.email.isEmpty, !viewModel.password.isEmpty else {
                     return
                 }
-                authState.signIn(email: email, password: password)
+                viewModel.signIn()
             }, label: {
                 Text("Log in")
                     .foregroundColor(Color.white)
@@ -41,10 +39,10 @@ struct SignInView: View {
                     .background(Color.blue)
                     .cornerRadius(5)
             })
-            if authState.requestProcessing {
+            if viewModel.requestProcessing {
                 Text("Loading...")
             }
-            NavigationLink("New user?", destination: RegisterView(email: $email, password: $password))
+            NavigationLink("New user?", destination: RegisterView(viewModel: viewModel))
                 .padding()
         }
         .padding()
@@ -53,6 +51,6 @@ struct SignInView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(email: "user", password: "pass")
+        SignInView()
     }
 }

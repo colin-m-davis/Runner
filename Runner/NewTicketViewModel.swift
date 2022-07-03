@@ -6,23 +6,81 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseAuth
 
-class NewTicketViewModel : ObservableObject {
+class NewTicketViewModel: ObservableObject {
+    
+    @Published var numberText = ""
     @Published var isDaily = false
-    // Section: Owner
+    /// Section: Owner
     @Published var nameText = ""
+        /// Overnight
     @Published var roomText = ""
     @Published var departureDate = Date()
-    // Section: Vehicle
+        /// Daily
+    @Published var eventText = ""
+    /// Section: Vehicle
     @Published var makeText = ""
     @Published var modelText = ""
     @Published var colorText = ""
-    // Section: Other
-    @Published var notesText = ""
+    
+    /// Alert displayed if the user tries to create a new ticket with no number
+    @Published var showErrorMessage = false
     
     func addTicket() {
-        // TODO - package field entries into Ticket object and send to correct collection in Firebase
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withFullDate] // "YYYY-MM-DD"
         
-        // Validation...Optional fields...Type casting...oh my
+        if numberText.isEmpty {
+            showErrorMessage.toggle()
+            print("Error: \"Number\" field must not be empty")
+            return
+        }
+        // TODO: Extended input validation
+        
+        let number = numberText
+        let name = nameText
+        var room = roomText
+        var departure = formatter.string(from: departureDate)
+        var event = eventText
+        let make = makeText
+        let model = modelText
+        let color = colorText
+        
+        if !isDaily {
+            event = ""
+        } else {
+            room = ""
+            departure = formatter.string(from: Date())
+        }
+        
+        /// Instantiate ticket object
+        let ticket = Ticket(number:number,
+                            name:name,
+                            room:room,
+                            departure:departure,
+                            event:event,
+                            make:make,
+                            model:model,
+                            color:color)
+        
+        let firebaseAuth = Auth.auth()
+        guard let uid = firebaseAuth.currentUser?.uid else {
+            print("Error: Could not verify user")
+            return
+        }
+        guard let id = ticket.id else {
+            print("Error: Could not get ticket ID")
+            return
+        }
+        let db = Firestore.firestore()
+        let docRef = db.collection("users").document(uid).collection("tickets").document(id)
+        do {
+            try docRef.setData(from: ticket)
+            print("Success: Document written")
+        } catch {
+            print("Error: Could not write document: \(error)")
+        }
     }
 }

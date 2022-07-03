@@ -23,7 +23,6 @@ struct TicketRowView: View {
             Text(dt)
             Text(ticket.id ?? "NO UID")
         }
-        .background(Color(.red))
     }
 }
 

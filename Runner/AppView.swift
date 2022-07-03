@@ -9,15 +9,13 @@ import SwiftUI
 
 struct AppView: View {
     
-    @EnvironmentObject var authState : AuthState
+    @StateObject var viewModel = AppViewModel()
     
     var body: some View {
-        NavigationView {
-            if authState.isSignedIn {
-                TicketsView()
-            } else {
-                SignInView()
-            }
+        if viewModel.currentUser == nil {
+            SignInView()
+        } else {
+            TicketsView()
         }
     }
 }

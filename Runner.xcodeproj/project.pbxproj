@@ -43,6 +43,8 @@
 		DFDCDAB228703C8000C31B6F /* TicketsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCDAB128703C8000C31B6F /* TicketsViewModel.swift */; };
 		DFDCDAB428704ABA00C31B6F /* NewTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCDAB328704ABA00C31B6F /* NewTicketView.swift */; };
 		DFDCDAB728704F3300C31B6F /* NewTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCDAB628704F3300C31B6F /* NewTicketViewModel.swift */; };
+		DFDCDAB9287065DE00C31B6F /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCDAB8287065DE00C31B6F /* SignInViewModel.swift */; };
+		DFDCDABB2870694000C31B6F /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCDABA2870694000C31B6F /* AppViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		DFDCDAB128703C8000C31B6F /* TicketsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsViewModel.swift; sourceTree = "<group>"; };
 		DFDCDAB328704ABA00C31B6F /* NewTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketView.swift; sourceTree = "<group>"; };
 		DFDCDAB628704F3300C31B6F /* NewTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketViewModel.swift; sourceTree = "<group>"; };
+		DFDCDAB8287065DE00C31B6F /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		DFDCDABA2870694000C31B6F /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +153,9 @@
 			children = (
 				DF5DCB57286F604C00D3D2E5 /* RunnerApp.swift */,
 				DF5DCB59286F604C00D3D2E5 /* AppView.swift */,
+				DFDCDABA2870694000C31B6F /* AppViewModel.swift */,
 				DF5DCB81286F610600D3D2E5 /* SignInView.swift */,
+				DFDCDAB8287065DE00C31B6F /* SignInViewModel.swift */,
 				DF1E9698286FFDC60026DD51 /* FireBase */,
 				DF1E9688286FC6B30026DD51 /* Ticket.swift */,
 				DFDCDAB328704ABA00C31B6F /* NewTicketView.swift */,
@@ -343,8 +349,10 @@
 			files = (
 				DF5DCB82286F610600D3D2E5 /* SignInView.swift in Sources */,
 				DF5DCB91286F758300D3D2E5 /* RegisterView.swift in Sources */,
+				DFDCDABB2870694000C31B6F /* AppViewModel.swift in Sources */,
 				DF5DCB5A286F604C00D3D2E5 /* AppView.swift in Sources */,
 				DF1E9680286FA53B0026DD51 /* FirestoreManager.swift in Sources */,
+				DFDCDAB9287065DE00C31B6F /* SignInViewModel.swift in Sources */,
 				DF1E9695286FFDAA0026DD51 /* TicketsView.swift in Sources */,
 				DFDCDAB728704F3300C31B6F /* NewTicketViewModel.swift in Sources */,
 				DF5DCB58286F604C00D3D2E5 /* RunnerApp.swift in Sources */,

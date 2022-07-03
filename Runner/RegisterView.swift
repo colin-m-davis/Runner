@@ -8,39 +8,32 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @Binding var email : String
-    @Binding var password : String
+    @ObservedObject var viewModel : SignInViewModel
     
     @State var verifypassword = ""
     
-    @EnvironmentObject var authState : AuthState
-    
     var body: some View {
         VStack {
-            TextField("Email Address", text: $email)
+            TextField("Email Address", text: $viewModel.email)
                 .padding()
                 .background(Color(.secondarySystemBackground))
                 .cornerRadius(5)
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
-            SecureField("Password", text: $password)
+            SecureField("Password", text: $viewModel.password)
                 .padding()
                 .background(Color(.secondarySystemBackground))
                 .cornerRadius(5)
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
-            SecureField("Verify Password", text: $verifypassword)
+            SecureField("Verify Password", text: $viewModel.verifypassword)
                 .padding()
                 .background(Color(.secondarySystemBackground))
                 .cornerRadius(5)
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
             Button(action : {
-                guard !email.isEmpty, !password.isEmpty, password == verifypassword else {
-                    return
-                }
-                authState.register(email: email, password: password)
-
+                viewModel.register()
             }, label: {
                 Text("Create account")
                     .foregroundColor(Color.white)
@@ -48,7 +41,7 @@ struct RegisterView: View {
                     .background(Color.green)
                     .cornerRadius(5)
             })
-            if authState.requestProcessing {
+            if viewModel.requestProcessing {
                 Text("Loading...")
             }
         }
@@ -59,6 +52,6 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView(email: .constant("New User"), password: .constant("New Pass"))
+        RegisterView(viewModel: SignInViewModel())
     }
 }
