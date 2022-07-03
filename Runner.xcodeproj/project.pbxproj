@@ -37,6 +37,7 @@
 		DF5DCB99286F7EC800D3D2E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF5DCB98286F7EC800D3D2E5 /* GoogleService-Info.plist */; };
 		DF5DCB9A286F7EC800D3D2E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF5DCB98286F7EC800D3D2E5 /* GoogleService-Info.plist */; };
 		DF5DCB9B286F7EC800D3D2E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF5DCB98286F7EC800D3D2E5 /* GoogleService-Info.plist */; };
+		DF68578A287257C600A83FCD /* TicketRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF685789287257C600A83FCD /* TicketRowViewModel.swift */; };
 		DFDCDAB228703C8000C31B6F /* TicketsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCDAB128703C8000C31B6F /* TicketsViewModel.swift */; };
 		DFDCDAB428704ABA00C31B6F /* NewTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCDAB328704ABA00C31B6F /* NewTicketView.swift */; };
 		DFDCDAB728704F3300C31B6F /* NewTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCDAB628704F3300C31B6F /* NewTicketViewModel.swift */; };
@@ -79,6 +80,7 @@
 		DF5DCB81286F610600D3D2E5 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		DF5DCB90286F758300D3D2E5 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		DF5DCB98286F7EC800D3D2E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DF685789287257C600A83FCD /* TicketRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRowViewModel.swift; sourceTree = "<group>"; };
 		DFDCDAB128703C8000C31B6F /* TicketsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsViewModel.swift; sourceTree = "<group>"; };
 		DFDCDAB328704ABA00C31B6F /* NewTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketView.swift; sourceTree = "<group>"; };
 		DFDCDAB628704F3300C31B6F /* NewTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketViewModel.swift; sourceTree = "<group>"; };
@@ -149,14 +151,12 @@
 				DF5DCB57286F604C00D3D2E5 /* RunnerApp.swift */,
 				DF5DCB59286F604C00D3D2E5 /* AppView.swift */,
 				DFDCDABA2870694000C31B6F /* AppViewModel.swift */,
-				DF5DCB81286F610600D3D2E5 /* SignInView.swift */,
-				DFDCDAB8287065DE00C31B6F /* SignInViewModel.swift */,
 				DF1E9698286FFDC60026DD51 /* FireBase */,
 				DF1E9688286FC6B30026DD51 /* Ticket.swift */,
-				DFDCDAB328704ABA00C31B6F /* NewTicketView.swift */,
-				DFDCDAB628704F3300C31B6F /* NewTicketViewModel.swift */,
+				DF68578B287258AD00A83FCD /* NewTicketView */,
 				DFDCDAB528704DF900C31B6F /* TicketsView */,
-				DF5DCB90286F758300D3D2E5 /* RegisterView.swift */,
+				DF68578D287258DF00A83FCD /* TicketsRowView */,
+				DF68578C287258C400A83FCD /* SignInView */,
 				DF5DCB98286F7EC800D3D2E5 /* GoogleService-Info.plist */,
 				DF5DCB5B286F604C00D3D2E5 /* Assets.xcassets */,
 				DF5DCB5D286F604C00D3D2E5 /* Preview Content */,
@@ -189,11 +189,38 @@
 			path = RunnerUITests;
 			sourceTree = "<group>";
 		};
+		DF68578B287258AD00A83FCD /* NewTicketView */ = {
+			isa = PBXGroup;
+			children = (
+				DFDCDAB328704ABA00C31B6F /* NewTicketView.swift */,
+				DFDCDAB628704F3300C31B6F /* NewTicketViewModel.swift */,
+			);
+			path = NewTicketView;
+			sourceTree = "<group>";
+		};
+		DF68578C287258C400A83FCD /* SignInView */ = {
+			isa = PBXGroup;
+			children = (
+				DF5DCB81286F610600D3D2E5 /* SignInView.swift */,
+				DFDCDAB8287065DE00C31B6F /* SignInViewModel.swift */,
+				DF5DCB90286F758300D3D2E5 /* RegisterView.swift */,
+			);
+			path = SignInView;
+			sourceTree = "<group>";
+		};
+		DF68578D287258DF00A83FCD /* TicketsRowView */ = {
+			isa = PBXGroup;
+			children = (
+				DF1E968C286FF2EB0026DD51 /* TicketRowView.swift */,
+				DF685789287257C600A83FCD /* TicketRowViewModel.swift */,
+			);
+			path = TicketsRowView;
+			sourceTree = "<group>";
+		};
 		DFDCDAB528704DF900C31B6F /* TicketsView */ = {
 			isa = PBXGroup;
 			children = (
 				DFDCDAB128703C8000C31B6F /* TicketsViewModel.swift */,
-				DF1E968C286FF2EB0026DD51 /* TicketRowView.swift */,
 				DF1E9694286FFDAA0026DD51 /* TicketsView.swift */,
 			);
 			path = TicketsView;
@@ -343,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF5DCB82286F610600D3D2E5 /* SignInView.swift in Sources */,
+				DF68578A287257C600A83FCD /* TicketRowViewModel.swift in Sources */,
 				DF5DCB91286F758300D3D2E5 /* RegisterView.swift in Sources */,
 				DFDCDABB2870694000C31B6F /* AppViewModel.swift in Sources */,
 				DF5DCB5A286F604C00D3D2E5 /* AppView.swift in Sources */,

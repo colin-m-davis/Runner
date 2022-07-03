@@ -13,6 +13,7 @@ import FirebaseFirestoreSwift
 struct Ticket: Codable, Identifiable {
     @DocumentID var id : String? = UUID().uuidString
     var issued : Timestamp = Timestamp()
+    var isDaily : Bool = false
     var number : String = ""
     var name : String = ""
     var room : String = ""

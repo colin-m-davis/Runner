@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TicketRowView: View {
+    
+    @StateObject var viewModel = TicketRowViewModel()
+    
     let ticket: Ticket
     let dt: String // This shouldn't have been so hard
     
@@ -23,6 +26,14 @@ struct TicketRowView: View {
             DisclosureGroup(ticket.number) {
                 Text(dt)
             }
+        }
+        .swipeActions {
+            Button {
+                viewModel.deleteTicket(ticket: ticket)
+            } label: {
+                Image(systemName: "trash")
+            }
+            .tint(.red)
         }
     }
 }

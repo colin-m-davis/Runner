@@ -26,6 +26,7 @@ class NewTicketViewModel: ObservableObject {
     @Published var colorText = ""
     
     /// Alert displayed if the user tries to create a new ticket with no number
+    @Published var errorMessage = ""
     @Published var showErrorMessage = false
     
     func addTicket() -> Bool {
@@ -33,6 +34,7 @@ class NewTicketViewModel: ObservableObject {
         formatter.formatOptions = [.withFullDate] // "YYYY-MM-DD"
         
         if numberText.isEmpty {
+            errorMessage = "Please enter a ticket number."
             showErrorMessage.toggle()
             print("Error: \"Number\" field must not be empty")
             return false
@@ -56,7 +58,8 @@ class NewTicketViewModel: ObservableObject {
         }
         
         /// Instantiate ticket object
-        let ticket = Ticket(number:number,
+        let ticket = Ticket(isDaily:isDaily,
+                            number:number,
                             name:name,
                             room:room,
                             departure:departure,

@@ -20,14 +20,6 @@ struct TicketsView : View {
                 }
                 List(viewModel.tickets) { ticket in
                     TicketRowView(ticket: ticket)
-                        .swipeActions {
-                            Button {
-                                viewModel.deleteTicket(ticket: ticket)
-                            } label: {
-                                Image(systemName: "trash")
-                            }
-                            .tint(.red)
-                        }
                 }
                 .animation(.default, value: viewModel.tickets.count)
                 

@@ -16,27 +16,41 @@ struct NewTicketView : View {
     var body: some View {
                 Form {
                     TextField("Number (Required)", text: $viewModel.numberText)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
                     Toggle("Daily", isOn: $viewModel.isDaily.animation())
                     Section(header: Text("Owner")) {
                         TextField("Name", text: $viewModel.nameText)
+                            .autocapitalization(.none)
+                            .disableAutocorrection(true)
                         if !viewModel.isDaily {
                             TextField("Room Number", text: $viewModel.roomText)
+                                .autocapitalization(.none)
+                                .disableAutocorrection(true)
                             DatePicker(selection: $viewModel.departureDate, in: Date()..., displayedComponents: .date) {
                                 Text("Departure Date")
                             }
                         } else {
                             TextField("Event", text: $viewModel.eventText)
+                                .autocapitalization(.none)
+                                .disableAutocorrection(true)
                         }
                     }
                     Section(header: Text("Vehicle")) {
                         TextField("Make", text: $viewModel.makeText)
+                            .autocapitalization(.none)
+                            .disableAutocorrection(true)
                         TextField("Model", text: $viewModel.modelText)
+                            .autocapitalization(.none)
+                            .disableAutocorrection(true)
                         TextField("Color", text: $viewModel.colorText)
+                            .autocapitalization(.none)
+                            .disableAutocorrection(true)
                     }
                     .alert(isPresented: $viewModel.showErrorMessage) {
                         Alert(
                             title: Text("Error"),
-                            message: Text("Please enter the ticket number."),
+                            message: Text(viewModel.errorMessage),
                             dismissButton: .default(Text("OK")))
                     }
                 }
