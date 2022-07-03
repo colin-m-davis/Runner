@@ -46,12 +46,14 @@ struct RegisterView: View {
             }
         }
         .padding()
-        .navigationTitle("Create Account")
+        .navigationBarTitle("Create Account", displayMode: .inline)
     }
 }
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView(viewModel: SignInViewModel())
+        NavigationView {
+            RegisterView(viewModel: SignInViewModel())
+        }
     }
 }

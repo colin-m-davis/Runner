@@ -11,6 +11,8 @@ struct NewTicketView : View {
     
     @ObservedObject var viewModel = NewTicketViewModel()
     
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    
     var body: some View {
                 Form {
                     TextField("Number (Required)", text: $viewModel.numberText)
@@ -39,10 +41,14 @@ struct NewTicketView : View {
                     }
                 }
         .navigationBarItems(trailing: Button(
-            action: viewModel.addTicket,
+            action: {
+                if viewModel.addTicket() {
+                    self.mode.wrappedValue.dismiss()
+                }
+            },
             label: { Text("Submit") }
         ))
-        .navigationBarTitle("New ticket", displayMode: .inline)
+        .navigationBarTitle("New Ticket", displayMode: .inline)
     }
 }
 

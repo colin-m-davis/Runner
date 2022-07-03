@@ -28,14 +28,14 @@ class NewTicketViewModel: ObservableObject {
     /// Alert displayed if the user tries to create a new ticket with no number
     @Published var showErrorMessage = false
     
-    func addTicket() {
+    func addTicket() -> Bool {
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions = [.withFullDate] // "YYYY-MM-DD"
         
         if numberText.isEmpty {
             showErrorMessage.toggle()
             print("Error: \"Number\" field must not be empty")
-            return
+            return false
         }
         // TODO: Extended input validation
         
@@ -68,19 +68,21 @@ class NewTicketViewModel: ObservableObject {
         let firebaseAuth = Auth.auth()
         guard let uid = firebaseAuth.currentUser?.uid else {
             print("Error: Could not verify user")
-            return
+            return false
         }
         guard let id = ticket.id else {
             print("Error: Could not get ticket ID")
-            return
+            return false
         }
         let db = Firestore.firestore()
         let docRef = db.collection("users").document(uid).collection("tickets").document(id)
         do {
             try docRef.setData(from: ticket)
             print("Success: Document written")
+            return true
         } catch {
             print("Error: Could not write document: \(error)")
+            return false
         }
     }
 }

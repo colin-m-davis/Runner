@@ -10,7 +10,6 @@ import Firebase
 
 @main
 struct RunnerApp: App {
-    @StateObject var authState = AuthState()
     
     init() {
         FirebaseApp.configure()
@@ -19,7 +18,7 @@ struct RunnerApp: App {
     var body: some Scene {
         WindowGroup {
             AppView()
-                .environmentObject(authState)
+                .preferredColorScheme(.dark)
         }
     }
 }
