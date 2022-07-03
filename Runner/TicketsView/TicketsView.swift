@@ -18,31 +18,31 @@ struct TicketsView : View {
                 if viewModel.tickets.count == 0 {
                     Text("No tickets to display.")
                 }
-                
                 List(viewModel.tickets) { ticket in
                     TicketRowView(ticket: ticket)
                         .swipeActions {
                             Button {
-                                print("Delete")
+                                viewModel.deleteTicket(ticket: ticket)
                             } label: {
-                                Text("Oh yeah")
+                                Image(systemName: "trash")
                             }
+                            .tint(.red)
                         }
                 }
                 .animation(.default, value: viewModel.tickets.count)
-                .clipped()
-                
-                // TODO: This button is ugly AF
-                NavigationLink("New Ticket", destination: NewTicketView())
-                    .frame(width: 200, height: 50)
-                    .background(Color(.blue))
                 
                 Spacer()
+                
+                NavigationLink("New Ticket", destination: NewTicketView())
+                    .frame(width: 200, height: 50)
+                    .foregroundColor(Color(.white))
+                    .background(Color(.green))
+                    .cornerRadius(5)
             }
             .onAppear() {
                 viewModel.fetchTickets()
             }
-            .navigationBarTitle("Tickets")
+            .navigationBarTitle("Tickets", displayMode: .inline)
         }
     }
 }

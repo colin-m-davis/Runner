@@ -26,7 +26,7 @@ class SignInViewModel : ObservableObject {
         
         firebaseAuth.signIn(withEmail: email, password: password) { [weak self] result, error in
             guard result != nil, error == nil else {
-                print(error?.localizedDescription ?? "Unknown error occurred while attempting to sign in.")
+                print(error?.localizedDescription ?? "Error: Unknown error occurred while attempting to sign in.")
                 self?.requestProcessing = false
                 return
             }
@@ -46,7 +46,7 @@ class SignInViewModel : ObservableObject {
         
         firebaseAuth.createUser(withEmail: email, password: password) { [weak self] result, error in
             guard result != nil, error == nil else {
-                print(error?.localizedDescription ?? "Unknown error occurred while attempting to create user.")
+                print(error?.localizedDescription ?? "Error: Unknown error occurred while attempting to create user.")
                 self?.requestProcessing = false
                 return
             }
