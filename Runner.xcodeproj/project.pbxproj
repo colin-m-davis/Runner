@@ -37,9 +37,6 @@
 		DF5DCB99286F7EC800D3D2E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF5DCB98286F7EC800D3D2E5 /* GoogleService-Info.plist */; };
 		DF5DCB9A286F7EC800D3D2E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF5DCB98286F7EC800D3D2E5 /* GoogleService-Info.plist */; };
 		DF5DCB9B286F7EC800D3D2E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF5DCB98286F7EC800D3D2E5 /* GoogleService-Info.plist */; };
-		DF5DCB9D286F941A00D3D2E5 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DCB9C286F941A00D3D2E5 /* AuthState.swift */; };
-		DF5DCB9E286F941A00D3D2E5 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DCB9C286F941A00D3D2E5 /* AuthState.swift */; };
-		DF5DCB9F286F941A00D3D2E5 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DCB9C286F941A00D3D2E5 /* AuthState.swift */; };
 		DFDCDAB228703C8000C31B6F /* TicketsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCDAB128703C8000C31B6F /* TicketsViewModel.swift */; };
 		DFDCDAB428704ABA00C31B6F /* NewTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCDAB328704ABA00C31B6F /* NewTicketView.swift */; };
 		DFDCDAB728704F3300C31B6F /* NewTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCDAB628704F3300C31B6F /* NewTicketViewModel.swift */; };
@@ -82,7 +79,6 @@
 		DF5DCB81286F610600D3D2E5 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		DF5DCB90286F758300D3D2E5 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		DF5DCB98286F7EC800D3D2E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		DF5DCB9C286F941A00D3D2E5 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
 		DFDCDAB128703C8000C31B6F /* TicketsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsViewModel.swift; sourceTree = "<group>"; };
 		DFDCDAB328704ABA00C31B6F /* NewTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketView.swift; sourceTree = "<group>"; };
 		DFDCDAB628704F3300C31B6F /* NewTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketViewModel.swift; sourceTree = "<group>"; };
@@ -122,7 +118,6 @@
 		DF1E9698286FFDC60026DD51 /* FireBase */ = {
 			isa = PBXGroup;
 			children = (
-				DF5DCB9C286F941A00D3D2E5 /* AuthState.swift */,
 				DF1E967F286FA53B0026DD51 /* FirestoreManager.swift */,
 			);
 			path = FireBase;
@@ -360,7 +355,6 @@
 				DFDCDAB428704ABA00C31B6F /* NewTicketView.swift in Sources */,
 				DF1E9689286FC6B30026DD51 /* Ticket.swift in Sources */,
 				DFDCDAB228703C8000C31B6F /* TicketsViewModel.swift in Sources */,
-				DF5DCB9D286F941A00D3D2E5 /* AuthState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +365,6 @@
 				DF5DCB69286F604C00D3D2E5 /* RunnerTests.swift in Sources */,
 				DF5DCB92286F758300D3D2E5 /* RegisterView.swift in Sources */,
 				DF1E968A286FC6B30026DD51 /* Ticket.swift in Sources */,
-				DF5DCB9E286F941A00D3D2E5 /* AuthState.swift in Sources */,
 				DF1E9681286FA53B0026DD51 /* FirestoreManager.swift in Sources */,
 				DF1E9696286FFDAA0026DD51 /* TicketsView.swift in Sources */,
 				DF1E968E286FF2EB0026DD51 /* TicketRowView.swift in Sources */,
@@ -386,7 +379,6 @@
 				DF5DCB93286F758300D3D2E5 /* RegisterView.swift in Sources */,
 				DF1E9697286FFDAA0026DD51 /* TicketsView.swift in Sources */,
 				DF1E968B286FC6B30026DD51 /* Ticket.swift in Sources */,
-				DF5DCB9F286F941A00D3D2E5 /* AuthState.swift in Sources */,
 				DF1E9682286FA53B0026DD51 /* FirestoreManager.swift in Sources */,
 				DF5DCB75286F604C00D3D2E5 /* RunnerUITestsLaunchTests.swift in Sources */,
 				DF5DCB73286F604C00D3D2E5 /* RunnerUITests.swift in Sources */,
