@@ -11,8 +11,40 @@ import FirebaseAuth
 
 class TicketRowViewModel: ObservableObject {
     
+    var ticket: Ticket
+    var details: [[String]] = []
+    
+    init(ticket: Ticket) {
+        self.ticket = ticket
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        let issueDate = formatter.string(from: ticket.issued.dateValue())
+        
+        if ticket.isDaily {
+            self.details = [
+                ["clock", issueDate],
+                ["person", ticket.name],
+                ["airplane.departure", ticket.departure],
+                ["building", ticket.room],
+                ["hammer", ticket.make],
+                ["car", ticket.model],
+                ["paintbrush", ticket.color]
+            ]
+        } else {
+            self.details = [
+                ["clock", issueDate],
+                ["person", ticket.name],
+                ["pin", ticket.event],
+                ["hammer", ticket.make],
+                ["car", ticket.model],
+                ["paintbrush", ticket.color]
+            ]
+        }
+    }
+    
     /// Remove ticket from user's "tickets" collection by ID
-    func deleteTicket(ticket: Ticket) {
+    func deleteTicket() {
         
         /// Validate session
         let firebaseAuth = Auth.auth()

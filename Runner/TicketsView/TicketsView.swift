@@ -19,9 +19,10 @@ struct TicketsView : View {
                     Text("No tickets to display.")
                 }
                 List(viewModel.tickets) { ticket in
-                    TicketRowView(ticket: ticket)
+                    TicketRowView(viewModel: TicketRowViewModel(ticket: ticket))
+                }.transaction { transaction in
+                    transaction.animation = nil
                 }
-                .animation(.default, value: viewModel.tickets.count)
                 
                 Spacer()
                 

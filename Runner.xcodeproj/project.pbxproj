@@ -155,7 +155,7 @@
 				DF1E9688286FC6B30026DD51 /* Ticket.swift */,
 				DF68578B287258AD00A83FCD /* NewTicketView */,
 				DFDCDAB528704DF900C31B6F /* TicketsView */,
-				DF68578D287258DF00A83FCD /* TicketsRowView */,
+				DF68578D287258DF00A83FCD /* TicketRowView */,
 				DF68578C287258C400A83FCD /* SignInView */,
 				DF5DCB98286F7EC800D3D2E5 /* GoogleService-Info.plist */,
 				DF5DCB5B286F604C00D3D2E5 /* Assets.xcassets */,
@@ -208,13 +208,13 @@
 			path = SignInView;
 			sourceTree = "<group>";
 		};
-		DF68578D287258DF00A83FCD /* TicketsRowView */ = {
+		DF68578D287258DF00A83FCD /* TicketRowView */ = {
 			isa = PBXGroup;
 			children = (
 				DF1E968C286FF2EB0026DD51 /* TicketRowView.swift */,
 				DF685789287257C600A83FCD /* TicketRowViewModel.swift */,
 			);
-			path = TicketsRowView;
+			path = TicketRowView;
 			sourceTree = "<group>";
 		};
 		DFDCDAB528704DF900C31B6F /* TicketsView */ = {
